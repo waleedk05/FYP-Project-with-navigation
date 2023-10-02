@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "LifeAid",
+    "slug": "LifeAid",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
+      ]
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Your message here"
+      },
+      "supportsTablet": true,
+      "bundleIdentifier": "n"
+    },
+    "android": {
+      "permissions": [
+        "android.permission.CAMERA_ROLL",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.waleedk_05.LifeAid"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0874f4f2-07a0-4d8e-a7e0-b4ab46bc8cc9"
+      }
+    }
+  }
+}
