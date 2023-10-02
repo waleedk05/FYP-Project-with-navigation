@@ -227,97 +227,104 @@ const Settings = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <ScrollView>
-                <Text style={styles.text}>Personal Information</Text>
+            <View style={{
+                marginLeft: 30,
+                marginRight: 30
+            }}>
 
-                <View style={{ marginTop: 20, }}>
-                    <Text style={{ ...FONTS.h3, color: COLORS.black, alignSelf: 'center', fontWeight: '500' }}>
-                        Avatar
-                    </Text>
-                    <View style={{ marginBottom: 20, justifyContent: 'center', alignSelf: 'center', }}>
 
-                        {profilePicture && typeof profilePicture === 'string' ? (
-                            <Image source={{ uri: profilePicture }} style={styles.Profileimage} />
-                        ) : (
-                            profilePictureUrl && typeof profilePictureUrl === 'string' ? (
-                                <Image source={{ uri: profilePictureUrl }} style={styles.Profileimage} />
+                <ScrollView>
+                    <Text style={styles.text}>Personal Information</Text>
+
+                    <View style={{ marginTop: 20, }}>
+                        <Text style={{ ...FONTS.h3, color: COLORS.black, alignSelf: 'center', fontWeight: '500' }}>
+                            Avatar
+                        </Text>
+                        <View style={{ marginBottom: 20, justifyContent: 'center', alignSelf: 'center', }}>
+
+                            {profilePicture && typeof profilePicture === 'string' ? (
+                                <Image source={{ uri: profilePicture }} style={styles.Profileimage} />
                             ) : (
-                                <Image source={icons.profilePicGrey} style={styles.Profileimage} />
-                            )
-                        )}
+                                profilePictureUrl && typeof profilePictureUrl === 'string' ? (
+                                    <Image source={{ uri: profilePictureUrl }} style={styles.Profileimage} />
+                                ) : (
+                                    <Image source={icons.profilePicGrey} style={styles.Profileimage} />
+                                )
+                            )}
 
-                        <View style={{ flexDirection: 'row', }}>
-                            <TouchableOpacity style={styles.button1} onPress={handleImageChange}>
-                                <Text style={{ color: COLORS.primaryRed, ...FONTS.h6, fontWeight: '700' }}>
-                                    Change
-                                </Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.button2} >
-                                <Text style={{ color: COLORS.black, ...FONTS.h6, fontWeight: '700' }}>Remove</Text>
-                            </TouchableOpacity>
+                            <View style={{ flexDirection: 'row', }}>
+                                <TouchableOpacity style={styles.button1} onPress={handleImageChange}>
+                                    <Text style={{ color: COLORS.primaryRed, ...FONTS.h6, fontWeight: '700' }}>
+                                        Change
+                                    </Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.button2} >
+                                    <Text style={{ color: COLORS.black, ...FONTS.h6, fontWeight: '700' }}>Remove</Text>
+                                </TouchableOpacity>
+                            </View>
+
                         </View>
-
                     </View>
-                </View>
 
-                <View style={{ marginTop: 20 }}>
-                    <Text style={styles.inputLabel}>Email:</Text>
-                    <Input
-                        placeholder={email}
-                        editable={false} />
-                </View>
+                    <View style={{ marginTop: 20 }}>
+                        <Text style={styles.inputLabel}>Email:</Text>
+                        <Input
+                            placeholder={email}
+                            editable={false} />
+                    </View>
 
-                <View style={{ marginTop: 20 }}>
-                    <Text style={styles.inputLabel}>Full Name:</Text>
-                    <Input
-                        value={fullName}
-                        onChangeText={setFullName}
+                    <View style={{ marginTop: 20 }}>
+                        <Text style={styles.inputLabel}>Full Name:</Text>
+                        <Input
+                            value={fullName}
+                            onChangeText={setFullName}
 
-                    />
-                </View>
+                        />
+                    </View>
 
-                <View style={{ marginTop: 20 }}>
-                    <Text style={styles.inputLabel}>Phone Number:</Text>
-                    <Input
-                        value={phoneNumber}
-                        onChangeText={setPhoneNumber}
-                    />
-                </View>
+                    <View style={{ marginTop: 20 }}>
+                        <Text style={styles.inputLabel}>Phone Number:</Text>
+                        <Input
+                            value={phoneNumber}
+                            onChangeText={setPhoneNumber}
+                        />
+                    </View>
 
-                <View style={{ marginTop: 20 }}>
-                    <Text style={styles.inputLabel}>Address:</Text>
-                    <Input
-                        value={address}
-                        onChangeText={setAddress}
-                    />
-                </View>
-                <View style={{ marginTop: 20 }}>
-                    <Text style={styles.inputLabel}>Blood Group:</Text>
-                    <Input
-                        value={bloodGroup}
-                        onChangeText={setSelectedItem}
-                    />
-                </View>
-                <View style={{ marginTop: 20 }}>
-                    <Text style={styles.inputLabel}>Date Of Birth:</Text>
-                    <Input />
-                </View>
-                <View style={{ marginTop: 20 }}>
-                    <Text style={styles.inputLabel}>Notifications:</Text>
-                </View>
-                <View style={{ marginBottom: 50, justifyContent: 'center' }}>
-                    <Button title="Delete Account" onPress={handleDeleteAccount} />
-                </View>
-                <View style={{ marginBottom: 100, flexDirection: 'row', justifyContent: 'center' }}>
-                    <TouchableOpacity style={styles.button3}  >
-                        <Text style={{ color: COLORS.black, ...FONTS.h6, fontWeight: '700' }}>Discard Changes</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.button4} onPress={saveAllChanges}>
-                        <Text style={{ color: COLORS.secondaryWhite, ...FONTS.h6, fontWeight: '700' }}>Save Changes</Text>
-                    </TouchableOpacity>
-                </View>
+                    <View style={{ marginTop: 20 }}>
+                        <Text style={styles.inputLabel}>Address:</Text>
+                        <Input
+                            value={address}
+                            onChangeText={setAddress}
+                        />
+                    </View>
+                    <View style={{ marginTop: 20 }}>
+                        <Text style={styles.inputLabel}>Blood Group:</Text>
+                        <Input
+                            value={bloodGroup}
+                            onChangeText={setSelectedItem}
+                        />
+                    </View>
+                    <View style={{ marginTop: 20 }}>
+                        <Text style={styles.inputLabel}>Date Of Birth:</Text>
+                        <Input />
+                    </View>
+                    <View style={{ marginTop: 20 }}>
+                        <Text style={styles.inputLabel}>Notifications:</Text>
+                    </View>
+                    <View style={{ marginBottom: 50, justifyContent: 'center' }}>
+                        <Button title="Delete Account" onPress={handleDeleteAccount} />
+                    </View>
+                    <View style={{ marginBottom: 100, flexDirection: 'row', justifyContent: 'center' }}>
+                        <TouchableOpacity style={styles.button3}  >
+                            <Text style={{ color: COLORS.black, ...FONTS.h6, fontWeight: '700' }}>Discard Changes</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.button4} onPress={saveAllChanges}>
+                            <Text style={{ color: COLORS.secondaryWhite, ...FONTS.h6, fontWeight: '700' }}>Save Changes</Text>
+                        </TouchableOpacity>
+                    </View>
 
-            </ScrollView>
+                </ScrollView>
+            </View>
         </View>
     )
 }
@@ -326,9 +333,8 @@ const Settings = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLORS.secondaryWhite,
-        marginLeft: 30,
-        marginRight: 30
+        backgroundColor: 'white',
+
     },
     text: {
         color: COLORS.primaryRed,
